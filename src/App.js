@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import CursorTrail from "./components/CursorTrail/CursorTrail"
+import About from "./pages/About/About"
+import Home from "./pages/Home/Home"
+import Portfolio from "./pages/Portfolio/Portfolio"
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Home />
+      <About />
+      <Portfolio />
+      <CursorTrail />
+    </>
+  )
 }
-
-export default App;

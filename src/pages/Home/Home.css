@@ -1,0 +1,41 @@
+body {
+  color: white;
+}
+
+main#home {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  position: sticky;
+}
+
+#personal-info-wrapper {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#name-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-animation {
+  transition: 1s;
+  animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-60px);
+  }
+}

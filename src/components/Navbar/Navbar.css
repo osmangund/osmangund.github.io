@@ -1,0 +1,31 @@
+:root {
+  --space-highlight-color: #9196ba;
+}
+nav {
+  padding: 0 160px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: 400ms;
+}
+nav.sticky {
+  background-color: rgba(255, 255, 255, 0.10);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+nav ul #links-wrapper {
+  display: flex;
+  gap: 15px;
+}
+nav ul a {
+  text-decoration: none;
+  color: white;
+}
+.first-letter {
+  color: var(--space-highlight-color);
+}
