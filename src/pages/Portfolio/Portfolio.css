@@ -7,6 +7,7 @@
   margin: 0;
   height: 100vh;
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -17,7 +18,7 @@
   max-width: 922px;
   width: calc(100% - 20px);
 }
-#cards:hover > .card > .card-border {
+#cards:hover .card-border {
   opacity: 1;
 }
 .card {
@@ -48,7 +49,7 @@
 .card::before {
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.12),
     transparent 40%
   );
   z-index: 3;
@@ -59,7 +60,7 @@
     rgba(255, 255, 255, 0.3),
     transparent 40%
   );
-  z-index: 1;
+  z-index: 2;
 }
 .card > .card-content {
   background-color: var(--card-color);
@@ -69,6 +70,24 @@
   z-index: 2;
 }
 
-.card h1 {
+.card-content {
+  box-sizing: border-box;
+  padding: 16px;
+}
+.card-content .title-wrapper {
+  
+}
+.card-content .title {
+  text-align: center;
+}
+.card-content .description {
+  color: lightgray;
+}
+
+.portfolio-link {
   color: white;
+  text-decoration: none;
+}
+.card-content li {
+  list-style-type: armenian;
 }

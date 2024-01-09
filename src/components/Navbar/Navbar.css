@@ -2,30 +2,111 @@
   --space-highlight-color: #9196ba;
 }
 nav {
-  padding: 0 160px;
+  padding: 0 32px;
   position: fixed;
+  min-height: 40px;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
   transition: 400ms;
+  z-index: 99;
 }
 nav.sticky {
-  background-color: rgba(255, 255, 255, 0.10);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  background-color: black;
 }
 nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
+  padding: 0 6vw;
 }
 nav ul #links-wrapper {
   display: flex;
   gap: 15px;
 }
-nav ul a {
+
+nav a {
+  font-family: "Rubik", sans-serif;
   text-decoration: none;
-  color: white;
+  color: #6e6e6e;
+  font-size: 1.25rem;
 }
-.first-letter {
-  color: var(--space-highlight-color);
+.nav-item {
+  position: relative;
+  animation: fade-in-top 0.5s ease-in-out;
+}
+
+.nav-item-text {
+  display: block;
+  line-height: 1;
+  position: relative;
+}
+.nav-item > div:nth-child(1) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: bottom;
+  display: inline-block;
+}
+.nav-item > div:nth-child(2) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.35s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: top;
+  display: inline-block;
+  transform: translate3d(0, 100%, 0) rotateX(-90deg);
+}
+
+.nav-item:hover > div:nth-child(1) span {
+  transform: translate3d(0, -100%, 0) rotateX(-90deg);
+}
+
+.nav-item:hover > div:nth-child(2) span {
+  color: white;
+  transform: translate3d(0, 0%, 0) rotateX(0deg);
+}
+
+nav ul #name-logo {
+  font-family: "Rubik Glitch", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%);
+  transition: 0.36s ease;
+  font-size: 2.5rem;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.name-logo-animation {
+  top: 30% !important;
+  font-size: 1.5rem !important;
+}
+
+@keyframes fade-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

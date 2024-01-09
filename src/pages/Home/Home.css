@@ -1,29 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 body {
   color: white;
-}
-
-main#home {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  position: sticky;
-}
-
-#personal-info-wrapper {
-  grid-column: 1 / 3;
-  grid-row: 2 / 4;
-  background-color: #1a1a1a;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#name-logo-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .logo-animation {
@@ -37,5 +15,164 @@ main#home {
   }
   100% {
     transform: translateY(-60px);
+  }
+}
+section#home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+#personal-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transform-style: preserve-3d;
+  transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+}
+
+#personal-info-wrapper .word {
+  font-family: "Russo One", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-size: 5rem;
+  margin: 0;
+  padding: 0 16px;
+}
+
+#name-wrapper {
+  margin-bottom: 32px;
+  animation: name-entry 1.5s forwards;
+}
+
+#job-title-wrapper {
+  animation: title-entry 2.5s forwards;
+  ;
+}
+
+#personal-info-wrapper .word.small {
+  font-size: 3rem !important;
+}
+.text {
+  padding: 32px;
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+}
+
+#personal-info-wrapper:has(.fancy:hover) .word:not(.fancy:hover) {
+  opacity: 0.2;
+}
+
+.fancy > .letter {
+  display: inline-block;
+  transition: 350ms ease;
+}
+
+.line {
+  position: relative;
+}
+
+.fancy:hover > .letter:nth-child(1) {
+  transform: translate(-80%, 60%) rotate(8deg);
+}
+.fancy:hover > .letter:nth-child(2) {
+  transform: translate(-40%, 20%) rotate(5deg);
+}
+.fancy:hover > .letter:nth-child(3) {
+  transform: translate(-10%, 60%) rotate(-6deg);
+}
+.fancy:hover > .letter:nth-child(4) {
+  transform: translate(0%, 8%) rotate(-8deg);
+}
+.fancy:hover > .letter:nth-child(5) {
+  transform: translate(0%, -20%) rotate(-3deg);
+}
+
+span.description {
+  font-family: "Rubik", sans-serif;
+  text-transform: none;
+  font-size: 1.2rem;
+
+  position: absolute;
+  top: 96px;
+  left: 0;
+
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 400ms;
+}
+
+span.description > img.logo.react {
+  opacity: 0;
+  animation: none;
+}
+.fancy:hover > .description {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.fancy:hover > .description .logo.react {
+  position: absolute;
+  left: 35%;
+
+  width: 125px;
+  height: 125px;
+
+  opacity: 0.2;
+  animation: logo-spin infinite 20s linear;
+}
+
+.big-text {
+  display: flex;
+  display: none;
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
+  color: white;
+  text-shadow: 4px 0 10px rgba(0, 0, 0, 0.13);
+  transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+}
+
+@keyframes name-entry {
+  0% {
+    opacity: 0;
+    translate: 0 100px;
+  }
+  20% {
+    translate: 0 0px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes title-entry {
+  0% {
+    opacity: 0;
+    translate: 0 200px;
+  }
+  20% {
+    translate: 0 0px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

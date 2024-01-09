@@ -1,0 +1,59 @@
+#pre-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vw;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity 0.75s visibility 0.75s;
+}
+
+.pre-loader-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+#pre-loader::after {
+  content: "<OG />";
+  font-family: "Rubik Glitch", sans-serif;
+  font-size: 6rem;
+  position: absolute;
+  transform: translate(-50% -50%);
+  color: white;
+  animation: loading-glitch 1.5s ease-in-out;
+}
+
+@keyframes loading-glitch {
+  0% {
+    opacity: 90%;
+    content: "<OG />";
+  }
+
+  25% {
+    opacity: 20%;
+    content: "<O />";
+  }
+
+  50% {
+    opacity: 90%;
+    content: "<G />";
+  }
+
+  75% {
+    opacity: 10%;
+    content: "OG ";
+  }
+
+  100% {
+    opacity: 99%;
+    content: "<OG />";
+  }
+}

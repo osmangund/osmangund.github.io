@@ -3,12 +3,23 @@ import "./CursorTrail.css"
 
 export default function CursorTrail() {
   const coords = { x: 0, y: 0 }
+  const colors = [
+    "#9196ba",
+    "#858aab",
+    "#7a7e9c",
+    "#6e728d",
+    "#63667f",
+    "#585b70",
+    "#4d5063",
+    "#434555",
+  ]
 
   useEffect(() => {
     const circles = document.querySelectorAll(".circle")
-    circles.forEach((circle) => {
+    circles.forEach((circle, index) => {
       circle.x = 0
       circle.y = 0
+      circle.style.backgroundColor = colors[index % colors.length]
     })
 
     function animateCircles() {
@@ -19,7 +30,8 @@ export default function CursorTrail() {
         circle.style.left = x - 12 + "px"
         circle.style.top = y - 12 + "px"
 
-        circle.style.scale = (circles.length - index) / (circles.length * 1.5)
+        circle.style.scale = (circles.length - index) / circles.length
+        circle.style.zIndex = circles.length - index
         circle.x = x
         circle.y = y
 
@@ -34,12 +46,22 @@ export default function CursorTrail() {
     window.addEventListener("mousemove", (e) => {
       coords.x = e.clientX
       coords.y = e.clientY
+      const circleWrapper = document.getElementById("circle-wrapper")
+      if (
+        circleWrapper.style.display === "none" ||
+        !circleWrapper.style.display
+      ) {
+        setTimeout(() => {
+          circleWrapper.style.display = "block"
+        }, 100)
+      }
     })
+
     animateCircles()
-  })
+  }, [])
 
   return (
-    <>
+    <div id="circle-wrapper">
       <div className="circle" />
       <div className="circle" />
       <div className="circle" />
@@ -50,6 +72,11 @@ export default function CursorTrail() {
       <div className="circle" />
       <div className="circle" />
       <div className="circle" />
-    </>
+      <div className="circle" />
+      <div className="circle" />
+      <div className="circle" />
+      <div className="circle" />
+      <div className="circle" />
+    </div>
   )
 }
