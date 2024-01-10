@@ -69,7 +69,7 @@ nav a {
   transform: translate3d(0, 0%, 0) rotateX(0deg);
 }
 
-nav ul #name-logo {
+nav ul .name-logo {
   font-family: "Rubik Glitch", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
@@ -84,6 +84,27 @@ nav ul #name-logo {
   transition: 0.36s ease;
   font-size: 2.5rem;
   animation: fade-in 0.5s ease-in-out;
+}
+
+nav ul .name-logo:nth-child(1) {
+  color: white;
+  translate: 2% -3.5%
+}
+nav ul .name-logo:nth-child(2) {
+  color: purple;
+  translate: 4% -7%
+}
+nav ul .name-logo:nth-child(3) {
+  color: red;
+  translate: 6% -10.5%
+}
+nav ul .name-logo:nth-child(4) {
+  color: blue;
+  translate: 8% -14%
+}
+nav ul .name-logo:nth-child(5) {
+  color: yellow;
+  translate: 10% -17.5%
 }
 
 .name-logo-animation {

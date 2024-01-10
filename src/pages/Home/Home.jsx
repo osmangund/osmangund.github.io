@@ -5,29 +5,13 @@ import "./Home.css"
 
 export default function Home() {
   useEffect(() => {
-    const personalInfoWrapper = document.getElementById("personal-info-wrapper")
-    const bigText = document.querySelector(".big-text")
+    // const personalInfoWrapper = document.getElementById("personal-info-wrapper")
+
     document.addEventListener("mousemove", (e) => {
-      rotateElement(e, personalInfoWrapper)
+      // trackElement(e, personalInfoWrapper)
     })
   })
 
-  function rotateElement(event, element) {
-    const x = event.clientX
-    const y = event.clientY
-
-    const middleX = window.innerWidth / 2
-    const middleY = window.innerHeight / 2
-
-    const offsetX = ((x - middleX) / middleX) * 45
-    const offsetY = ((y - middleY) / middleY) * 45
-
-    // -1 * to invert the rotation direction
-    // RotateY is influnced by horizontal mouse movement (offsetX)
-    // RotateX is influnced by vertical mouse movement (offsetY)
-    element.style.setProperty("--rotateX", -1 * offsetY + "deg")
-    element.style.setProperty("--rotateY", offsetX + "deg")
-  }
   return (
     <>
       <Navbar />
@@ -43,6 +27,7 @@ export default function Home() {
               <p className="word">GUNDOGDU</p>
               <p className="word"></p>
             </div>
+            <div className="black-wrap"></div>
           </div>
           <div id="job-title-wrapper">
             <div className="line">
@@ -67,7 +52,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="big-text">OG</div>
       </section>
     </>
   )

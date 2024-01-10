@@ -1,3 +1,4 @@
+import { trackElement } from "../MouseTrack/MouseTrack"
 import "./Navbar.css"
 import { useEffect } from "react"
 
@@ -39,7 +40,7 @@ export default function Navbar() {
   })
   window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav")
-    const nameLogo = document.getElementById("name-logo")
+    const nameLogo = document.querySelector(".name-logo")
     nameLogo.classList.toggle("name-logo-animation", window.scrollY > 0)
     nav.classList.toggle("sticky", window.scrollY > 0)
   })
@@ -60,10 +61,11 @@ export default function Navbar() {
           href="https://linkedin.com/in/osmangund"
           target="_blank"
           rel="noreferrer"
-          id="name-logo"
+          className="name-logo"
         >
           {`<OG />`}
         </a>
+
         <div id="links-wrapper">
           <a href="#home" className="nav-item">
             <div>

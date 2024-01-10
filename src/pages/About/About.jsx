@@ -1,5 +1,6 @@
 import React from "react"
 import "./About.css"
+import Avatar from "../../components/Avatar/Avatar"
 
 export default function About() {
   return (
@@ -9,6 +10,7 @@ export default function About() {
           <img
             src="https://i.ibb.co/YRVzJDt/pexels-google-deepmind-18069693.jpg"
             alt=""
+            className="background-img"
           />
         </div>
         <h1 className="title">About</h1>
@@ -18,6 +20,7 @@ export default function About() {
         </p>
         <h3 className="title">Hobbies</h3>
         <p className="description">Reading books, psychology, gym.</p>
+        <Avatar/>
       </section>
     </>
   )

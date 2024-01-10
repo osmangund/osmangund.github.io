@@ -39,11 +39,11 @@ section#contact {
 }
 
 .linkedin-icon:hover {
-  animation: rotateY 1s ease-out;
+  animation: rotateY 1s ease-out forwards;
 }
 
 .github-icon:hover {
-  animation: flip 1s ease;
+  animation: flip 1s ease forwards;
 }
 
 @keyframes LeftToRight {
@@ -63,6 +63,6 @@ section#contact {
 
 @keyframes rotateY {
   to {
-    rotate: y 360deg;
+    rotate: y 180deg;
   }
 }
