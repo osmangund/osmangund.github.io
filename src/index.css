@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Kanit&family=Rubik+Glitch&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Kanit&family=Rubik+Glitch&family=Poppins&family=Space+Grotesk&display=swap");
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
@@ -11,13 +10,20 @@ section {
 body {
   background-color: black;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+body,
+section {
+  background-image: conic-gradient(
+    from 0deg at 0% 0%,
+    #000 0%,
+    #030303 100%
+  ) !important ;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

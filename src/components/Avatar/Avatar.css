@@ -1,17 +1,16 @@
 #avatar-wrapper {
-  position: relative;
 }
 #avatar-wrapper > #avatar {
   border: white 2px solid;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
 
   position: absolute;
-  left: 50%;
-  top: -50%;
-  transform: translate(-50%, -50%);
+  right: 100px;
+  top: 150px;
+  bottom: 0;
 
-  z-index: 3;
+  z-index: 0;
 }
 
 #avatar-wrapper > #avatar ~ .eyes {

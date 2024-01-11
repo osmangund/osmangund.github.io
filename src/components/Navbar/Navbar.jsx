@@ -39,18 +39,16 @@ export default function Navbar() {
     })
   })
   window.addEventListener("scroll", () => {
-    const nav = document.querySelector("nav")
+    // const nav = document.querySelector("nav")
     const nameLogo = document.querySelector(".name-logo")
-    nameLogo.classList.toggle("name-logo-animation", window.scrollY > 0)
-    nav.classList.toggle("sticky", window.scrollY > 0)
+    nameLogo.dataset.scrolled = (true, window.scrollY > 0)
+    // nav.dataset.scrolled = (true, window.scrollY > 0)
   })
   return (
     <nav>
       <ul>
         <a
-          href="https://linkedin.com/in/osmangund"
-          target="_blank"
-          rel="noreferrer"
+          href="/"
           className="nav-item"
         >
           <div>
