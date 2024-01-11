@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import "./Portfolio.css"
 import PortfolioItem from "./PortfolioItem"
+import { ReactComponent as HourglassIcon } from "../../assets/hourglass.svg"
 
 export default function Portfolio() {
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function Portfolio() {
             "Alarm sound on break mode",
             "Reset, start/stop with one click",
           ]}
+          icon={<HourglassIcon />}
         />
         <PortfolioItem
           title="Data Visualization Projects"
@@ -60,6 +62,14 @@ export default function Portfolio() {
         />
         <PortfolioItem
           title="Random Quote Generator"
+          listItems={[
+            "Generate new quote on reload automatically",
+            "Background color change on each quote",
+            "Share on Twitter with one click",
+          ]}
+        />
+        <PortfolioItem
+          title="Test"
           listItems={[
             "Generate new quote on reload automatically",
             "Background color change on each quote",

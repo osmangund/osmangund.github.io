@@ -13,9 +13,10 @@ export default function PortfolioItem(props) {
       target="_blank"
       rel="noreferrer"
     >
-      <div className="card">
+      <div className="card" data-project={titleToLink(props.title)}>
         <div className="card-border" />
         <div className="card-content">
+          <div className="card-image-wrapper">{props.icon }</div>
           <div className="title-wrapper">
             <h1 className="title">{props.title}</h1>
           </div>

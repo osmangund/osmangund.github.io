@@ -47,12 +47,9 @@ export default function Navbar() {
   return (
     <nav>
       <ul>
-        <a
-          href="/"
-          className="nav-item"
-        >
+        <a href="/" className="nav-item name-wrapper">
           <div>
-            <span className="nav-item-text">osmangund®</span>
+            <span className="nav-item-name">osmangund®</span>
           </div>
         </a>
         <a

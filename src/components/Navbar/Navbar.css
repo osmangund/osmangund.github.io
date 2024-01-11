@@ -1,6 +1,6 @@
 @media only screen and (max-width: 900px) {
   nav a:not(.name-logo) {
-    font-size: 0.8rem !important;
+    font-size: 1rem !important;
   }
 }
 @media only screen and (max-width: 620px) {
@@ -9,6 +9,17 @@
   }
 }
 
+@media only screen and (max-width: 400px) {
+  .nav-item.name-wrapper {
+    display: none !important;
+    visibility: none !important;
+  }
+  nav {
+    top: auto !important;
+    bottom: 0 !important;
+    border-top: 1px solid white;
+  }
+}
 
 :root {
   --space-highlight-color: #9196ba;
@@ -23,6 +34,7 @@ nav {
   padding: 0 32px;
   background-color: white;
   background-color: rgba(0, 0, 0, 0.5);
+  background-color: #262528;
 
   display: flex;
   align-items: center;
@@ -38,7 +50,7 @@ nav {
 } */
 nav ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
 
   list-style: none;
@@ -55,7 +67,7 @@ nav ul #links-wrapper {
 nav a {
   font-family: "Space-Grotesk", sans-serif;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: #6e6e6e;
   font-size: 1.1rem;
 }
@@ -63,7 +75,7 @@ nav a {
   position: relative;
 }
 
-.nav-item-text {
+.nav-item-name {
   display: block;
   line-height: 1;
   position: relative;

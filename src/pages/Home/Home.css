@@ -22,6 +22,7 @@ section#home {
   display: flex;
   justify-content: center;
   text-align: center;
+  
   position: relative;
 }
 #personal-info-wrapper {
