@@ -1,17 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Dhurjati&family=Kanit&family=Rubik+Glitch&family=Poppins&family=Space+Grotesk&display=swap");
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("./assets/fonts/Helvetica Neue 67 Medium Condensed.otf");
+  font-weight: normal;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
   overflow-x: hidden;
 }
+
 section {
   scroll-snap-align: start;
 }
+
 body {
   background-color: black;
+  color: white;
   margin: 0;
 
-  font-family: "Poppins", sans-serif;
+  font-family: "Helvetica", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,10 +34,12 @@ section {
     #030303 100%
   ) !important ;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
+ul {
+  list-style: none;
 }
 
-section {
+a {
+  text-decoration: none;
+  color: white;
 }

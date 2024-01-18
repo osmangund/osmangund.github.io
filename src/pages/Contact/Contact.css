@@ -4,10 +4,11 @@ section#contact {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+
+  position: relative;
 }
 
 #contact .icon-link {
-  text-decoration: none;
   color: white;
   padding: 10px;
   transition: 200ms;
@@ -24,22 +25,31 @@ section#contact {
 
 #contact-text-wrapper {
   margin: 0 auto;
-  display: flex;
   overflow: hidden;
   white-space: nowrap;
+  
+  display: flex;
 }
 
 .contact-text {
-  overflow: hidden;
-  animation: LeftToRight 19s infinite linear;
   white-space: nowrap;
   padding: 0 16px;
-  font-size: 7rem;
   letter-spacing: 1px;
+  
+  /* Style for prefers-reduced-motion: reduce */
+  font-size: 4rem;
+}
+
+.contact-text[data-animated="true"] {
+  overflow: hidden;
+
+  font-size: 7rem;
+  animation: RightToLeft 19s infinite linear;
 }
 
 .linkedin-icon:hover {
-  animation: rotateY 1s ease-out forwards;
+  transform: rotateY(30deg);
+  transition: 350ms ease-in-out;
 }
 
 .github-icon:hover {
@@ -55,14 +65,81 @@ section#contact {
   }
 }
 
+@keyframes RightToLeft {
+  to {
+    translate: -100% 0;
+  }
+}
+
 @keyframes flip {
   to {
     rotate: z 360deg;
   }
 }
 
-@keyframes rotateY {
-  to {
-    rotate: y 180deg;
-  }
+#contacts {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-link {
+  z-index: 1;
+}
+
+#contact-circle {
+  background-color: white;
+  position: absolute;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-circle::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+
+  transition: 700ms ease-in-out;
+  user-select: none;
+  z-index: -1;
+}
+
+#contact-circle:hover::after {
+  opacity: 1;
+  background-color: hsl(270, 4%, 50%);
+  background-color: black;
+
+  width: 99%;
+  height: 99%;
+}
+
+#contact-circle:hover .icon-link svg path {
+  fill: lightgray;
+}
+
+#contact-text-wrapper,
+#contact-circle {
+  transition: opacity 700ms ease-in-out;
+}
+
+#contact-text-wrapper.hide,
+#contact-circle.hide {
+  opacity: 0;
+}
+
+#contact-text-wrapper.show,
+#contact-circle.show {
+  opacity: 1;
 }

@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
-body {
-  color: white;
+/* @media only screen and (max-width: 900px) {
+  nav a:not(.name-logo) {
+    font-size: 1rem !important;
+  }
 }
+@media only screen and (max-width: 620px) {
+  nav {
+    padding: 0 !important;
+  }
+} */
 
 .logo-animation {
   transition: 1s;
@@ -22,7 +29,7 @@ section#home {
   display: flex;
   justify-content: center;
   text-align: center;
-  
+
   position: relative;
 }
 #personal-info-wrapper {
@@ -30,9 +37,6 @@ section#home {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* transform-style: preserve-3d; */
-  /* transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX)); */
 }
 
 #personal-info-wrapper .word {
@@ -58,7 +62,7 @@ section#home {
 }
 
 #personal-info-wrapper .word.small {
-  font-size: 3rem !important;
+  font-size: 3rem;
 }
 .text {
   padding: 32px;
@@ -108,23 +112,21 @@ span.description {
 
   height: 0;
   opacity: 0;
-  visibility: hidden;
 
   transition: 400ms;
 }
 
 span.description > img.logo.react {
+  position: absolute;
   opacity: 0;
-  animation: none;
 }
+
 .fancy:hover > .description {
   height: auto;
   opacity: 1;
-  visibility: visible;
 }
 
 .fancy:hover > .description .logo.react {
-  position: absolute;
   left: 35%;
 
   width: 125px;
@@ -179,5 +181,12 @@ span.description > img.logo.react {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #personal-info-wrapper .word,
+  #personal-info-wrapper .word.small {
+    font-size: 2rem;
   }
 }

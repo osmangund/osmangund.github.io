@@ -1,4 +1,3 @@
-import { trackElement } from "../MouseTrack/MouseTrack"
 import "./Navbar.css"
 import { useEffect } from "react"
 
@@ -21,7 +20,7 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    const navItems = document.querySelectorAll(".nav-item")
+    const navItems = document.querySelectorAll(".nav__item")
     navItems.forEach((item) => {
       // Empty normal text, split words into letters, append them back
       const navItemDiv = item.children[0]
@@ -40,46 +39,40 @@ export default function Navbar() {
   })
   window.addEventListener("scroll", () => {
     // const nav = document.querySelector("nav")
-    const nameLogo = document.querySelector(".name-logo")
+    const nameLogo = document.querySelector(".name__logo")
     nameLogo.dataset.scrolled = (true, window.scrollY > 0)
     // nav.dataset.scrolled = (true, window.scrollY > 0)
   })
   return (
     <nav>
       <ul>
-        <a href="/" className="nav-item name-wrapper">
+        <a href="/" className="nav__item name">
           <div>
-            <span className="nav-item-name">osmangund®</span>
+            <span aria-hidden="true">osmangund®</span>
           </div>
         </a>
-        <a
-          href="https://linkedin.com/in/osmangund"
-          target="_blank"
-          rel="noreferrer"
-          className="name-logo"
-        >
-          {`<OG />`}
-        </a>
 
-        <div id="links-wrapper">
-          <a href="#home" className="nav-item">
+        <p className="name__logo" aria-hidden="true">{`<OG />`}</p>
+
+        <div id="links">
+          <a href="#home" className="nav__item">
             <div>
-              <span className="nav-item-text">Home</span>
+              <span>Home</span>
             </div>
           </a>
-          <a href="#about" className="nav-item">
+          <a href="#about" className="nav__item">
             <div>
-              <span className="nav-item-text">About</span>
+              <span>About</span>
             </div>
           </a>
-          <a href="#portfolio" className="nav-item">
+          <a href="#portfolio" className="nav__item">
             <div>
-              <span className="nav-item-text">Portfolio</span>
+              <span>Portfolio</span>
             </div>
           </a>
-          <a href="#contact" className="nav-item">
+          <a href="#contact" className="nav__item">
             <div>
-              <span className="nav-item-text">Contact</span>
+              <span>Contact</span>
             </div>
           </a>
         </div>

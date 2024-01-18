@@ -5,36 +5,34 @@ import "./Home.css"
 import Avatar from "../../components/Avatar/Avatar"
 
 export default function Home() {
-  useEffect(() => {
-    // const personalInfoWrapper = document.getElementById("personal-info-wrapper")
-
-    document.addEventListener("mousemove", (e) => {
-      // trackElement(e, personalInfoWrapper)
-    })
-  })
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
   useEffect(() => {
     let iterations = 0
-    const nameWords = document.querySelectorAll("[data-anim='hacker']")
+    const hackerTexts = document.querySelectorAll("[data-anim='hacker']")
 
     setTimeout(() => {
-      const nameAnimationInterval = setInterval(() => {
-        nameWords.forEach((word) => {
-          word.innerHTML = word.innerHTML
-            .split("")
-            .map((letter, index) => {
-              if (index < iterations) {
-                return word.dataset.value[index]
-              }
-              return alphabet[Math.floor(Math.random() * alphabet.length)]
-            })
-            .join("")
+      const hackerAnimInterval = setInterval(() => {
+        hackerTexts.forEach((text) => {
+          hackerEffect(text)
         })
-        if (iterations >= 9) clearInterval(nameAnimationInterval)
+        if (iterations >= 9) clearInterval(hackerAnimInterval)
 
         iterations += 1 / 4
       }, 30)
-    }, 750)
+    }, 500)
+
+    function hackerEffect(text) {
+      text.innerHTML = text.innerHTML
+        .split("")
+        .map((letter, index) => {
+          if (index < iterations) {
+            return text.dataset.value[index]
+          }
+          return alphabet[Math.floor(Math.random() * alphabet.length)]
+        })
+        .join("")
+    }
   })
 
   return (

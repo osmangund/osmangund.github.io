@@ -1,0 +1,47 @@
+.nav__item {
+  position: relative;
+}
+
+.nav__item > div:nth-child(1) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: bottom;
+  display: inline-block;
+  animation: child-1 1.5s;
+}
+.nav__item > div:nth-child(2) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.35s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: top;
+  display: inline-block;
+  transform: translate3d(0, 100%, 0) rotateX(-90deg);
+  animation: child-2 1.35s;
+}
+
+.nav__item:hover > div:nth-child(1) span {
+  transform: translate3d(0, -100%, 0) rotateX(-90deg);
+}
+
+.nav__item:hover > div:nth-child(2) span {
+  color: white;
+  transform: translate3d(0, 0%, 0) rotateX(0deg);
+}
+
+@keyframes child-1 {
+  from {
+    transform: translate3d(0, -100%, 0) rotateX(-90deg);
+  }
+}
+
+@keyframes child-2 {
+  to {
+    transform: translate3d(0, 100%, 0) rotateX(-90deg);
+  }
+  from {
+    transform: translate3d(0, 0%, 0) rotateX(0deg);
+  }
+}

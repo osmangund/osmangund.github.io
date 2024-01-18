@@ -1,0 +1,7 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="graph">
+<path id="big" opacity=".9" d="M62 22C68.2484 22 71.7516 22 78 22V78H62V22Z" fill="white"/>
+<rect id="medium" opacity=".9" x="42" y="36" width="16" height="42" fill="white"/>
+<rect id="small" opacity=".9" x="22" y="46" width="16" height="32" fill="white"/>
+</g>
+</svg>

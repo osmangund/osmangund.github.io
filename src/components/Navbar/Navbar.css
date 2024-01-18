@@ -1,5 +1,5 @@
 @media only screen and (max-width: 900px) {
-  nav a:not(.name-logo) {
+  nav a:not(.name__logo) {
     font-size: 1rem !important;
   }
 }
@@ -9,20 +9,30 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
-  .nav-item.name-wrapper {
+@media only screen and (max-width: 420px) {
+  .nav__item.name-wrapper {
     display: none !important;
-    visibility: none !important;
   }
   nav {
     top: auto !important;
     bottom: 0 !important;
     border-top: 1px solid white;
   }
+  .name__logo {
+    top: auto !important;
+    font-size: 5rem !important;
+    bottom: 600% !important;
+  }
+  nav ul .name__logo[data-scrolled="true"] {
+    bottom: 20% !important;
+    font-size: 1.5rem !important;
+    opacity: 1 !important;
+  }
 }
 
 :root {
   --space-highlight-color: #9196ba;
+  --nav-min-height: 75px;
 }
 nav {
   position: fixed;
@@ -30,11 +40,11 @@ nav {
   left: 0;
   right: 0;
 
-  min-height: 50px;
+  min-height: var(--nav-min-height);
   padding: 0 32px;
   background-color: white;
-  background-color: rgba(0, 0, 0, 0.5);
   background-color: #262528;
+  background-color: rgba(0, 0, 0, 0.5);
 
   display: flex;
   align-items: center;
@@ -50,37 +60,30 @@ nav {
 } */
 nav ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
 
-  list-style: none;
   padding: 0 6vw;
 
   width: 100%;
   height: 100%;
 }
-nav ul #links-wrapper {
+nav ul #links {
   display: flex;
-  gap: 15px;
+  gap: 5rem;
 }
 
 nav a {
   font-family: "Space-Grotesk", sans-serif;
-  text-decoration: none;
-  text-transform: lowercase;
+
   color: #6e6e6e;
   font-size: 1.1rem;
 }
-.nav-item {
+.nav__item {
   position: relative;
 }
 
-.nav-item-name {
-  display: block;
-  line-height: 1;
-  position: relative;
-}
-.nav-item > div:nth-child(1) span {
+.nav__item > div:nth-child(1) span {
   will-change: transform;
   transform-style: preserve-3d;
   transition: 0.5s;
@@ -89,7 +92,7 @@ nav a {
   display: inline-block;
   animation: child-1 1.5s;
 }
-.nav-item > div:nth-child(2) span {
+.nav__item > div:nth-child(2) span {
   will-change: transform;
   transform-style: preserve-3d;
   transition: 0.35s;
@@ -100,11 +103,11 @@ nav a {
   animation: child-2 1.35s;
 }
 
-.nav-item:hover > div:nth-child(1) span {
+.nav__item:hover > div:nth-child(1) span {
   transform: translate3d(0, -100%, 0) rotateX(-90deg);
 }
 
-.nav-item:hover > div:nth-child(2) span {
+.nav__item:hover > div:nth-child(2) span {
   color: white;
   transform: translate3d(0, 0%, 0) rotateX(0deg);
 }
@@ -124,26 +127,34 @@ nav a {
   }
 }
 
-nav ul .name-logo {
+nav ul .name__logo {
   font-family: "Rubik Glitch", sans-serif;
-  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
+  font-size: 10rem;
+  opacity: 0.2 !important;
+
   text-transform: uppercase;
   color: white;
-  text-decoration: none;
+
   position: absolute;
+  width: 100%;
   left: 50%;
-  top: 100%;
+  top: 150%;
+
   transform: translate(-50%);
-  transition: 0.36s ease;
-  font-size: 2.5rem;
-  animation: fade-in 0.5s ease-in-out;
+  transition: 0.6472s ease;
+
+  animation: fade-in 0.5s ease-in-out forwards;
+
+  z-index: -1;
 }
 
-nav ul .name-logo[data-scrolled="true"] {
-  top: 30% !important;
+nav ul .name__logo[data-scrolled="true"] {
+  top: -200% !important;
+  padding-top: 5px;
   font-size: 1.5rem !important;
+  /* opacity: 1 !important; */
 }
 
 @keyframes fade-in {
@@ -151,6 +162,6 @@ nav ul .name-logo[data-scrolled="true"] {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0.2;
   }
 }
