@@ -1,0 +1,240 @@
+:root {
+  --card-color: rgb(23, 23, 23);
+  --grey-80: #2a2b3a;
+  --background-rgb: 2 6 23;
+  --background-light-rgb: 30 41 59;
+
+  --border-rgb: 255 255 255;
+  --border: 1px solid rgb(var(--border-rgb) / 20%);
+
+  --card-size: 400px;
+  --card-height: 360px;
+  --font-size: 0.8rem;
+  --logo-size: calc(var(--card-size) * 0.3);
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --card-size: 230px;
+    --card-height: 200px;
+    --font-size: 0.7rem;
+    --logo-size: calc(var(--card-size) * 0.3);
+  }
+  .card {
+    margin: 0.5rem 0;
+  }
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+  height: var(--card-height);
+  width: var(--card-size);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 0.05px solid var(--grey-80);
+
+  opacity: 0;
+  transition: 700ms;
+  &.show {
+    opacity: 1;
+    .card-content {
+      animation: scale-up-down 1s;
+    }
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+  &::before,
+  .card-border {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+
+  &::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.12),
+      transparent 19%
+    );
+    z-index: 3;
+  }
+  .card-border {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.3),
+      transparent 40%
+    );
+  }
+  .card-content {
+    background-color: var(--card-color);
+    border-radius: inherit;
+    position: absolute;
+    inset: 1px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+    .title {
+      text-align: center;
+    }
+  }
+  .card-image {
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 64px;
+      height: 64px;
+      &,
+      path,
+      #graph * {
+        transition: 750ms ease-in-out;
+      }
+    }
+  }
+
+  .card-letters {
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    font-family: "Kanit", sans-serif;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+    word-wrap: break-word;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: var(--font-size);
+    font-weight: 500;
+    word-wrap: break-word;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    mask-image: radial-gradient(
+      calc(var(--card-size) * 0.8) circle at var(--mouse-x) var(--mouse-y),
+      rgb(255 255 255) 20%,
+      rgb(255 255 255 / 25%),
+      transparent
+    );
+  }
+  &:hover .card-letters {
+    opacity: 0.4;
+  }
+  .card-content {
+  }
+}
+
+/* Card image hover animations  */
+[data-project="pomodoro-clock"]:hover .card-image > svg {
+  transform: rotate(360deg);
+}
+
+[data-project="markdown-previewer"] .card-image > svg:nth-child(1) {
+  transform: translate(15px, 0) skew(0, 0);
+}
+
+[data-project="markdown-previewer"] .card-image > svg:nth-child(2) {
+  transform: translate(-15px, 0) skew(0, 0);
+}
+
+[data-project="markdown-previewer"]:hover .card-image > svg:nth-child(1) {
+  transform: translate(-40px, -20px) skew(0deg, 16deg);
+}
+[data-project="markdown-previewer"]:hover .card-image > svg:nth-child(2) {
+  transform: translate(40px, -20px) skew(0deg, -16deg);
+}
+
+[data-project="data-visualization-projects"]:hover
+  .card-image
+  > svg
+  > #graph
+  > #medium {
+  animation-delay: 0.1s;
+}
+[data-project="data-visualization-projects"]:hover
+  .card-image
+  > svg
+  > #graph
+  > #big {
+  animation-delay: 0.2s;
+}
+
+[data-project="data-visualization-projects"] #graph * {
+  transform: translateY(-20%);
+}
+[data-project="data-visualization-projects"]:hover #graph * {
+  animation: grow-and-shrink 0.75s both;
+}
+
+[data-project="random-quote-generator"]:hover .card-image > svg {
+  translate: 0 -20px;
+  rotate: z 15deg;
+}
+[data-project="javascript-calculator"]:hover .card-image > svg {
+}
+
+[data-project="javascript-calculator"] .card-image > svg > path {
+  // stroke-dasharray: 60;
+  // stroke-dashoffset: 0;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+[data-project="javascript-calculator"]:hover .card-image > svg > path {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  fill: white;
+  transition: all 10s linear forwards !important;
+}
+
+@keyframes grow-and-shrink {
+  0% {
+    transform: scaleY(1) translateY(-20%);
+  }
+  25% {
+    transform: scaleY(0.8) translateY(-15%);
+  }
+  50% {
+    transform: scaleY(1.6) translateY(-40%);
+  }
+  75% {
+    transform: scaleY(0.8) translateY(-15%);
+  }
+  100% {
+    transform: scaleY(1) translateY(-20%);
+  }
+}
+
+@keyframes scale-up-down {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

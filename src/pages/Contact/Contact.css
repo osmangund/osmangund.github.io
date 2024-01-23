@@ -27,7 +27,7 @@ section#contact {
   margin: 0 auto;
   overflow: hidden;
   white-space: nowrap;
-  
+
   display: flex;
 }
 
@@ -35,7 +35,7 @@ section#contact {
   white-space: nowrap;
   padding: 0 16px;
   letter-spacing: 1px;
-  
+
   /* Style for prefers-reduced-motion: reduce */
   font-size: 4rem;
 }
@@ -91,6 +91,8 @@ section#contact {
   position: absolute;
 
   background-color: rgba(255, 255, 255, 0.2);
+  /* filter: drop-shadow(0 0 2.75rem white); */
+  animation: lightUpDown 8s infinite linear;
 
   width: 180px;
   height: 180px;
@@ -99,6 +101,12 @@ section#contact {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 350ms;
+}
+
+#contact-circle:hover {
+  animation: none;
+  filter: drop-shadow(0 0 2.75rem white);
 }
 
 #contact-circle::after {
@@ -116,7 +124,7 @@ section#contact {
   z-index: -1;
 }
 
-#contact-circle:hover::after {
+#contact-circle:hover::after, #contact-circle:active::after {
   opacity: 1;
   background-color: hsl(270, 4%, 50%);
   background-color: black;
@@ -125,7 +133,8 @@ section#contact {
   height: 99%;
 }
 
-#contact-circle:hover .icon-link svg path {
+#contact-circle .icon-link svg:hover path,
+#contact-circle .icon-link svg:active path {
   fill: lightgray;
 }
 
@@ -142,4 +151,16 @@ section#contact {
 #contact-text-wrapper.show,
 #contact-circle.show {
   opacity: 1;
+}
+
+@keyframes lightUpDown {
+  0% {
+    filter: drop-shadow(0 0 2.75rem lightgray);
+  }
+  50% {
+    filter: drop-shadow(0 0 0 lightgray);
+  }
+  100% {
+    filter: drop-shadow(0 0 2.75rem lightgray);
+  }
 }

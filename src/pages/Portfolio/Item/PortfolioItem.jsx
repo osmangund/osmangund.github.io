@@ -1,5 +1,5 @@
 import { InView } from "react-intersection-observer"
-import "./PortfolioItem.css"
+import "./PortfolioItem.scss"
 
 export default function PortfolioItem(props) {
   function titleToLink(title) {
@@ -8,7 +8,7 @@ export default function PortfolioItem(props) {
   }
 
   return (
-    <InView as="div" threshold={0.25}>
+    <InView as="div" threshold={0.50}>
       {({ inView, ref, entry }) => (
         <a
           href={`https://osmangund.github.io/${titleToLink(props.title)}/`}
@@ -25,13 +25,11 @@ export default function PortfolioItem(props) {
             <div className="card-gradient" />
             <div className="card-letters" />
             <div className="card-content">
-              <div className="content">
-                <div className="card-image">
-                  {props.icon} {props.icon2}
-                </div>
-                <div className="title-wrapper">
-                  <h1 className="title">{props.title}</h1>
-                </div>
+              <div className="card-image">
+                {props.icon} {props.icon2}
+              </div>
+              <div className="title-wrapper">
+                <h1 className="title">{props.title}</h1>
               </div>
             </div>
           </div>

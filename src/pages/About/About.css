@@ -4,6 +4,7 @@ section#about {
   display: flex;
   justify-content: center;
   text-align: end;
+  display: none;
 
   position: relative;
   font-size: 1.33333em;

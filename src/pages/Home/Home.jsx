@@ -68,8 +68,8 @@ export default function Home() {
                 <span className="letter">T</span>
                 <span className="description">
                   React is a JavaScript library to build user interfaces for
-                  applications. It allows you to create your app piece by piece
-                  like lego blocks.{" "}
+                  your application. It allows you to create your app piece by
+                  piece like lego blocks. More, these lego blocks are reusable.{" "}
                   <img
                     src={reactLogo}
                     className="logo react"

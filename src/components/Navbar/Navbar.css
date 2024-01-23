@@ -1,35 +1,3 @@
-@media only screen and (max-width: 900px) {
-  nav a:not(.name__logo) {
-    font-size: 1rem !important;
-  }
-}
-@media only screen and (max-width: 620px) {
-  nav {
-    padding: 0 !important;
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  .nav__item.name-wrapper {
-    display: none !important;
-  }
-  nav {
-    top: auto !important;
-    bottom: 0 !important;
-    border-top: 1px solid white;
-  }
-  .name__logo {
-    top: auto !important;
-    font-size: 5rem !important;
-    bottom: 600% !important;
-  }
-  nav ul .name__logo[data-scrolled="true"] {
-    bottom: 20% !important;
-    font-size: 1.5rem !important;
-    opacity: 1 !important;
-  }
-}
-
 :root {
   --space-highlight-color: #9196ba;
   --nav-min-height: 75px;
@@ -55,9 +23,7 @@ nav {
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
-/* nav[data-scrolled="true"] {
-  background-color: rgba(0, 0, 0, 0.5);
-} */
+
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -68,6 +34,7 @@ nav ul {
   width: 100%;
   height: 100%;
 }
+
 nav ul #links {
   display: flex;
   gap: 5rem;
@@ -79,53 +46,6 @@ nav a {
   color: #6e6e6e;
   font-size: 1.1rem;
 }
-.nav__item {
-  position: relative;
-}
-
-.nav__item > div:nth-child(1) span {
-  will-change: transform;
-  transform-style: preserve-3d;
-  transition: 0.5s;
-  transition-delay: calc(0.05s * var(--index));
-  transform-origin: bottom;
-  display: inline-block;
-  animation: child-1 1.5s;
-}
-.nav__item > div:nth-child(2) span {
-  will-change: transform;
-  transform-style: preserve-3d;
-  transition: 0.35s;
-  transition-delay: calc(0.05s * var(--index));
-  transform-origin: top;
-  display: inline-block;
-  transform: translate3d(0, 100%, 0) rotateX(-90deg);
-  animation: child-2 1.35s;
-}
-
-.nav__item:hover > div:nth-child(1) span {
-  transform: translate3d(0, -100%, 0) rotateX(-90deg);
-}
-
-.nav__item:hover > div:nth-child(2) span {
-  color: white;
-  transform: translate3d(0, 0%, 0) rotateX(0deg);
-}
-
-@keyframes child-1 {
-  from {
-    transform: translate3d(0, -100%, 0) rotateX(-90deg);
-  }
-}
-
-@keyframes child-2 {
-  to {
-    transform: translate3d(0, 100%, 0) rotateX(-90deg);
-  }
-  from {
-    transform: translate3d(0, 0%, 0) rotateX(0deg);
-  }
-}
 
 nav ul .name__logo {
   font-family: "Rubik Glitch", sans-serif;
@@ -133,6 +53,8 @@ nav ul .name__logo {
   letter-spacing: 0.1rem;
   font-size: 10rem;
   opacity: 0.2 !important;
+
+  user-select: none;
 
   text-transform: uppercase;
   color: white;
@@ -163,5 +85,32 @@ nav ul .name__logo[data-scrolled="true"] {
   }
   100% {
     opacity: 0.2;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  nav a:not(.name__logo) {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 620px) {
+  nav {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .nav__item.name-wrapper {
+    display: none;
+  }
+  .name__logo {
+    top: auto;
+    font-size: 5rem;
+    bottom: 600%;
+  }
+  nav ul .name__logo[data-scrolled="true"] {
+    bottom: 20%;
+    font-size: 1.5rem;
+    opacity: 1;
   }
 }

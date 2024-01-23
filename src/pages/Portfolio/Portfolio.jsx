@@ -65,7 +65,7 @@ export default function Portfolio() {
           icon={<CalculatorIcon />}
         />
         <PortfolioItem title="Random Quote Generator" icon={<QuoteIcon />} />
-        <PortfolioItem title="Test" />
+        <PortfolioItem title="Product Landing Page" />
       </div>
     </section>
   )
