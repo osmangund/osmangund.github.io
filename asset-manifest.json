@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a19b95a5.css",
+    "main.js": "/static/js/main.ea9a7b0a.js",
+    "static/media/Helvetica Neue 67 Medium Condensed.otf": "/static/media/Helvetica Neue 67 Medium Condensed.83d0efb33c1a0c296f4f.otf",
+    "static/media/react.svg": "/static/media/react.6d4dd5dfc6163bdfcfe520bd6bef1a6a.svg",
+    "static/media/calculator.svg": "/static/media/calculator.6b51e23d1d0f9c09e8cb87a089023419.svg",
+    "static/media/quote.svg": "/static/media/quote.6ed66efc8957aae3551044ea78831e1e.svg",
+    "static/media/github.svg": "/static/media/github.a1123014e644e3e7fc7d591bd9b9b2d6.svg",
+    "index.html": "/index.html",
+    "static/media/hourglass.svg": "/static/media/hourglass.11c321345aeb5e6caecf57e44f88b86d.svg",
+    "static/media/datagraph.svg": "/static/media/datagraph.8bedcb4b119e67ccae430997e86c7271.svg",
+    "static/media/markdown-arrow.svg": "/static/media/markdown-arrow.cc6bbcf23e97b933915294e585efd191.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.49f8e9f78564f8aa8766de77cbaf110b.svg",
+    "static/media/markdown-m.svg": "/static/media/markdown-m.cbfb9508bba6e6ef461159cfcf75b389.svg",
+    "main.a19b95a5.css.map": "/static/css/main.a19b95a5.css.map",
+    "main.ea9a7b0a.js.map": "/static/js/main.ea9a7b0a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a19b95a5.css",
+    "static/js/main.ea9a7b0a.js"
+  ]
+}
