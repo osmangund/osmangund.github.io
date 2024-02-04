@@ -1,2 +1,2 @@
 ### First version of my personal portfolio
-https://osmangund.github.io/osmangund-1
+https://osmangund.github.io/osmangund-v1
